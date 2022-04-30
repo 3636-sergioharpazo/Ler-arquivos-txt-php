@@ -13,7 +13,7 @@ body{
 
 }
 .lana{
-background-color: white;
+background-color: blue;
 width: 200px;
 align-items: center;
 margin-left: 200px;
@@ -39,6 +39,11 @@ color:green;
 
 }
 form{
+  
+
+flex-direction: row;
+justify-content: center;
+align-items: center;
 background-color: yellow;
 position: fixed;
 bottom:0;
@@ -49,11 +54,12 @@ border-radius: 20px;
 </style>
 <body>
     <div class="lana">
+    <span>Cadastrados pelo Fale Conosco</span>
+        
     <table style="background-color: aqua;" border='1'class="bable">
         <thead>
 
-            <h2>Nomes Cadastrados pelo Fale Conosco</h2>
-        </thead>
+            </thead>
        <?php 
        
 
@@ -115,7 +121,7 @@ function hora(){
          minuto = zero(minuto);
         segundo = zero(segundo);
 var dia=['Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo']
-console.log(novaHora.getDay())
+
 var dia_semana=dia[novaHora.getDay()-1]
         
         document.querySelector('#horas').textContent = hora+':'+minuto+':'+segundo+' Dia da semana: '+dia_semana;
@@ -164,8 +170,27 @@ const premiumUsers=users.filter(user=>user.premium)
 
 console.log(premiumUsers)
 */
+const phaseScores = [
+  { name: 'Vinicius Costa', score: 337 },
+  { name: 'Roger Melo', score: 43 },
+  { name: 'Alfredo Braga', score: 234 },
+  { name: 'Pedro H. Silva', score: 261 },
+  { name: 'Ana Paula Rocha', score: 491 },
+  { name: 'Vinicius Costa', score: 167 },
+  { name: 'Roger Melo', score: 137 },
+  { name: 'Alfredo Braga', score: 135 },
+  { name: 'Ana Paula Rocha', score: 359 },
+  { name: 'Pedro H. Silva', score: 133 }
+]
+const regerScore=phaseScores.reduce((accumulator,phaseScore)=>{ 
 
+if(phaseScore.name ==='Roger Melo'){ 
+return accumulator+phaseScore.score
+}
+return accumulator
 
+},0)
+console.log(regerScore)
 }
 hora()
 
